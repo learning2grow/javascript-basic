@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../res/third/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="../res/third/easyui/themes/icon.css"/>
+    <script type="text/javascript" src="../res/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../res/third/easyui/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../res/js/public.js"></script>
+    <title>登陆</title>
+</head>
+<body>
+<div>
+    <h2>登陆</h2>
+
+    <p>请输入用户名密码登录</p>
+
+    <div class="easyui-panel" title="Login Form" style="width: 400px;">
+        <div style="padding:10px 60px 20px 60px">
+            <form id="loginForm" method="post" action="login.html">
+                <table cellpadding="5">
+                    <tr>
+                        <td>用户名:</td>
+                        <td><input class="easyui-textbox" type="text" name="name" data-options="required:true" validType="minLength[2]"></td>
+                    </tr>
+                    <tr>
+                        <td>密 码:</td>
+                        <td><input class="easyui-textbox" type="password" name="password" data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>验证码:</td>
+                        <td><input style="width: 60px;" class="easyui-textbox" type="text" name="authCode"
+                                   data-options="required:true">
+                            <span><img src="../res/img/code.png"></span>
+                            <a href="#" class="easyui-textbox-text">看不清 换一张</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div style="text-align:center;padding:5px">
+                <a href="javascript:void(0)" class="easyui-linkbutton" id="login">登陆</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" id="clear">清空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#login").click(function () {
+            $("#loginForm").form("submit");
+        });
+
+        $("#clear").click(function () {
+            $("#loginForm").form("clear");
+        });
+    });
+</script>
+</body>
+</html>

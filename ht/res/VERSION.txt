@@ -1,0 +1,2 @@
+jQuery-1.11.1
+jQuery-EasyUI-1.4.1

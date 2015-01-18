@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+<body>
+    <div>
+        金额验证：<input type="text" id="money"/> <input type="button" onclick="test1(this)"/>
+    </div>
+
+    <script>
+        function test1() {
+            v = document.getElementById("money").value;
+            alert(money(v));
+        }
+
+        function money(v) {
+            return /^((\\d{0,9})|0)?$/.test(v);
+        }
+    </script>
+</body>
+</html>
